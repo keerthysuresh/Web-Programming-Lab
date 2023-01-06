@@ -9,7 +9,7 @@ var contact=document.forms["frm"]["contact"].value;
 var email=document.forms["frm"]["mail"].value;
 var phoneno=/^\d{10}$/;
 var mailformat=/^\w+([\.-]?\w+)*@\w+([\.-]?w+)*(\.\w{2,3})+$/;
-if(name==" ")
+if(name=="")
 {
 alert("name cannot be empty");
 return false;
