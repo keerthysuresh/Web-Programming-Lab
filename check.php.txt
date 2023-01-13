@@ -1,0 +1,21 @@
+<?php include('connect.php'); session_start();
+
+if($_POST["submit"]){
+
+Suname=$_POST["uname"];
+
+Spword=$_POST["pword"];
+
+$sql=mysqli_query($conn,"SELECT * FROM userlogin WHERE username 'Suname' OR password='$pword"); while($row=mysqli_fetch_assoc($sql)){
+
+$dbuname=$row['username']; $dbpword=$row['password'];
+
+}
+
+if($dbuname==Suname && $dbpword==$pword){ $_SESSION['login_user'] = $uname;
+
+header("location: welcome.php"); } elseif ($dbuname==Suname && $dbpword!=Spword) { header("Location:login.php?msg=Wrong Password!!!"); //echo "<center><h2>Wrong Password!!</h2></center>";
+
+} elseif ($dbuname!=Suname && $dbpword==Spword) { header("Location:login.php?msg=Wrong Username!!!"); //echo "<center><h2>Wrong Username!!</h2></center>"; }
+
+} ?>

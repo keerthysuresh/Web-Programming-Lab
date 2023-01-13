@@ -1,0 +1,17 @@
+<?php
+
+session_start();
+
+$user=$_SESSION['login_user'];
+
+?>
+
+<html>
+
+<body> </html>
+
+<h1 align="center">WELCOME</h1>
+
+</body>
+
+<h1 align="center"><?php echo $user."!!!"; ?></h1>
